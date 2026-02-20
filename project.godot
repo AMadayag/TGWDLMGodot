@@ -14,6 +14,10 @@ config/name="Pokey"
 run/main_scene="uid://p0o4gl67nagg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Pokey"
