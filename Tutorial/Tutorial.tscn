@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://wnytj45uhgfm"]
+
+[ext_resource type="Texture2D" uid="uid://dcku4p6u7yqka" path="res://Assets/Backgrounds/background-temp.png" id="1_c1c4d"]
+[ext_resource type="Texture2D" uid="uid://dptd24w12aay4" path="res://Assets/Sprites/Emma/dodge-1.png" id="2_hgldx"]
+[ext_resource type="Texture2D" uid="uid://b3vykkt313i7y" path="res://Assets/Sprites/Emma/emma-still.png" id="2_m05rd"]
+[ext_resource type="Texture2D" uid="uid://w7eu0jh1iemu" path="res://Assets/Sprites/Emma/emma-walk-1.png" id="3_yhiv6"]
+[ext_resource type="Texture2D" uid="uid://bpyi1rgt8anhx" path="res://Assets/Sprites/Emma/emma-walk-3.png" id="4_3oavh"]
+[ext_resource type="Texture2D" uid="uid://djkc30kam2e50" path="res://Assets/Sprites/Emma/emma-still-right.png" id="5_l41xm"]
+[ext_resource type="Texture2D" uid="uid://c7c7riymn1fad" path="res://Assets/Sprites/Emma/emma-walk-1-right.png" id="6_hgldx"]
+[ext_resource type="Texture2D" uid="uid://cc1jrpa0dv3kr" path="res://Assets/Sprites/Emma/emma-walk-3-right.png" id="7_jm7vr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l41xm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hgldx")
+}],
+"loop": true,
+"name": &"Dodge",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk-Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m05rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yhiv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m05rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3oavh")
+}],
+"loop": true,
+"name": &"Walk-Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_l41xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hgldx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l41xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jm7vr")
+}],
+"loop": true,
+"name": &"Walk-Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk-Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgldx"]
+size = Vector2(31, 77.5)
+
+[node name="Tutorial" type="Node2D" unique_id=735892748]
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1228023131]
+z_index = -1
+position = Vector2(575.99994, 323.99997)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("1_c1c4d")
+
+[node name="Emma" type="CharacterBody2D" parent="." unique_id=131476858]
+
+[node name="EmmaSprite" type="AnimatedSprite2D" parent="Emma" unique_id=1431446324]
+position = Vector2(754, 373)
+scale = Vector2(0.36, 0.36)
+sprite_frames = SubResource("SpriteFrames_l41xm")
+animation = &"Walk-Left"
+
+[node name="EmmaCollision" type="CollisionShape2D" parent="Emma" unique_id=882757267]
+position = Vector2(754, 375)
+shape = SubResource("RectangleShape2D_hgldx")

@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://dcms6jbpcudjk"]
+
+[ext_resource type="Script" uid="uid://d1rnuqdj0ft5h" path="res://Cutscene1/cutscene_1.gd" id="1_cxun4"]
+[ext_resource type="Texture2D" uid="uid://ddfsr0wgmtxqh" path="res://Assets/Backgrounds/background-faded-temp.png" id="1_gqlvb"]
+[ext_resource type="Texture2D" uid="uid://bb05dkxkya8bn" path="res://Assets/Characters/paul-1.png" id="2_fcpal"]
+[ext_resource type="Texture2D" uid="uid://2f8nh1fr62c4" path="res://Assets/Characters/paul-2.png" id="3_cxun4"]
+[ext_resource type="Texture2D" uid="uid://cu3t0e6odhctd" path="res://Assets/Characters/emma-1.png" id="3_jd0ho"]
+[ext_resource type="Texture2D" uid="uid://dcku4p6u7yqka" path="res://Assets/Backgrounds/background-temp.png" id="3_ox4bw"]
+[ext_resource type="Texture2D" uid="uid://bihnkmx8g851a" path="res://Assets/Characters/paul-3.png" id="4_18eal"]
+[ext_resource type="Texture2D" uid="uid://b6q3o2mulad2s" path="res://Assets/Characters/emma-2.png" id="4_drot3"]
+[ext_resource type="Texture2D" uid="uid://iws35o6w26yj" path="res://Assets/Characters/paul-4.png" id="5_jd0ho"]
+[ext_resource type="Texture2D" uid="uid://bfunsk45flcdo" path="res://Assets/Text/emma-1.png" id="9_1l2jd"]
+[ext_resource type="Texture2D" uid="uid://bb4jiyncf2h7g" path="res://Assets/Text/emma-2.png" id="10_jcyv5"]
+[ext_resource type="Texture2D" uid="uid://dei57qlcxhut7" path="res://Assets/Text/Notes/notes-1.png" id="11_73w7p"]
+[ext_resource type="Texture2D" uid="uid://kho5g37xwyhx" path="res://Assets/Text/im-sorry-1.png" id="11_ga5fu"]
+[ext_resource type="Texture2D" uid="uid://ccda8jsv38c7t" path="res://Assets/Text/Notes/notes-2.png" id="12_7iglx"]
+[ext_resource type="Texture2D" uid="uid://cpad82qmmahuo" path="res://Assets/Text/im-sorry-2.png" id="12_ox4bw"]
+[ext_resource type="Texture2D" uid="uid://dyu3nwpuax444" path="res://Assets/Text/w-what-1.png" id="13_6u8nl"]
+[ext_resource type="Texture2D" uid="uid://cq1hvgwgf20su" path="res://Assets/Text/Notes/notes-3.png" id="13_f4usk"]
+[ext_resource type="Texture2D" uid="uid://b7pc7ybkqxilb" path="res://Assets/Text/w-what-2.png" id="14_gg0wd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_drot3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jd0ho")
+}, {
+"duration": 2.5,
+"texture": ExtResource("4_drot3")
+}],
+"loop": true,
+"name": &"Emma",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cxun4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcpal")
+}, {
+"duration": 0.7,
+"texture": ExtResource("4_18eal")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_jd0ho")
+}],
+"loop": true,
+"name": &"Paul",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u5b2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1l2jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jcyv5")
+}],
+"loop": true,
+"name": &"emma",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ga5fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ox4bw")
+}],
+"loop": true,
+"name": &"im-sorry",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_6u8nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gg0wd")
+}],
+"loop": true,
+"name": &"w-what",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdmkw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_73w7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7iglx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f4usk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7iglx")
+}],
+"loop": true,
+"name": &"on",
+"speed": 2.0
+}]
+
+[node name="Cutscene1" type="Node2D" unique_id=470660627]
+script = ExtResource("1_cxun4")
+
+[node name="Click" type="TextureButton" parent="." unique_id=1298686029]
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 1175.0
+offset_bottom = 670.0
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1674090977]
+position = Vector2(575.99994, 323.99997)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("1_gqlvb")
+
+[node name="Bg2" type="Sprite2D" parent="." unique_id=166275670]
+z_index = -1
+position = Vector2(575.99994, 323.99997)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_ox4bw")
+
+[node name="Character" type="AnimatedSprite2D" parent="." unique_id=664350093]
+position = Vector2(817.99994, 367.99997)
+scale = Vector2(0.56, 0.56)
+sprite_frames = SubResource("SpriteFrames_drot3")
+animation = &"Paul"
+
+[node name="Textbox" type="AnimatedSprite2D" parent="." unique_id=1068852411]
+position = Vector2(396.99997, 535)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2u5b2")
+animation = &"w-what"
+
+[node name="Notes" type="AnimatedSprite2D" parent="Textbox" unique_id=1209820052]
+position = Vector2(874.00006, -422)
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_vdmkw")
+animation = &"off"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Click" to="." method="_on_click_pressed"]

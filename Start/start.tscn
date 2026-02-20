@@ -1,17 +1,32 @@
 [gd_scene format=3 uid="uid://bcc8odv5dwmp8"]
 
+[ext_resource type="Script" uid="uid://dyj8uxfv665g0" path="res://Start/start.gd" id="1_vdp6l"]
 [ext_resource type="Texture2D" uid="uid://1l2sq4tvu2lk" path="res://Assets/Start/start-button.png" id="2_kcwqr"]
 [ext_resource type="Texture2D" uid="uid://dl3rt3jmydosj" path="res://Assets/Start/start-button-hover.png" id="2_sace0"]
 [ext_resource type="Texture2D" uid="uid://dpcnp4ky4gadf" path="res://Assets/Start/start-button-press.png" id="3_fei3c"]
+[ext_resource type="Texture2D" uid="uid://dluhyb3g0nvr3" path="res://Assets/Start/info-button.png" id="5_3tbpj"]
+[ext_resource type="Texture2D" uid="uid://714ehee6l6gh" path="res://Assets/Start/info-button-hover.png" id="6_one0q"]
 
 [node name="Start" type="Node2D" unique_id=1820069497]
+script = ExtResource("1_vdp6l")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=435902801]
-offset_left = 316.0
-offset_top = 301.0
-offset_right = 816.0
-offset_bottom = 551.0
+[node name="StartBtn" type="TextureButton" parent="." unique_id=435902801]
+offset_left = 270.0
+offset_top = 320.0
+offset_right = 770.0
+offset_bottom = 570.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_kcwqr")
 texture_pressed = ExtResource("3_fei3c")
 texture_hover = ExtResource("2_sace0")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1783957021]
+offset_left = 700.0
+offset_top = 320.0
+offset_right = 1200.0
+offset_bottom = 570.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("5_3tbpj")
+texture_hover = ExtResource("6_one0q")
+
+[connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]
