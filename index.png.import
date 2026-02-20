@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ijvui6oaile"
-path="res://.godot/imported/Pokey.icon.png-55c515587e3820cd6373887efee25e03.ctex"
+uid="uid://b3s6ouukx3otc"
+path="res://.godot/imported/index.png-5122033cac747157decad52589e2295c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Exports/Web/Pokey.icon.png"
-dest_files=["res://.godot/imported/Pokey.icon.png-55c515587e3820cd6373887efee25e03.ctex"]
+source_file="res://index.png"
+dest_files=["res://.godot/imported/index.png-5122033cac747157decad52589e2295c.ctex"]
 
 [params]
 
