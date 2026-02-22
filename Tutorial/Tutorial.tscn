@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://wnytj45uhgfm"]
 
 [ext_resource type="Texture2D" uid="uid://dcku4p6u7yqka" path="res://Assets/Backgrounds/background-temp.png" id="1_c1c4d"]
+[ext_resource type="Script" uid="uid://bv2knmpn2chub" path="res://Tutorial/tutorial.gd" id="1_dws54"]
 [ext_resource type="Texture2D" uid="uid://dptd24w12aay4" path="res://Assets/Sprites/Emma/dodge-1.png" id="2_hgldx"]
 [ext_resource type="Texture2D" uid="uid://b3vykkt313i7y" path="res://Assets/Sprites/Emma/emma-still.png" id="2_m05rd"]
+[ext_resource type="Script" uid="uid://dja8motvajyxf" path="res://Tutorial/emma.gd" id="2_x3xat"]
 [ext_resource type="Texture2D" uid="uid://w7eu0jh1iemu" path="res://Assets/Sprites/Emma/emma-walk-1.png" id="3_yhiv6"]
 [ext_resource type="Texture2D" uid="uid://bpyi1rgt8anhx" path="res://Assets/Sprites/Emma/emma-walk-3.png" id="4_3oavh"]
 [ext_resource type="Texture2D" uid="uid://djkc30kam2e50" path="res://Assets/Sprites/Emma/emma-still-right.png" id="5_l41xm"]
 [ext_resource type="Texture2D" uid="uid://c7c7riymn1fad" path="res://Assets/Sprites/Emma/emma-walk-1-right.png" id="6_hgldx"]
 [ext_resource type="Texture2D" uid="uid://cc1jrpa0dv3kr" path="res://Assets/Sprites/Emma/emma-walk-3-right.png" id="7_jm7vr"]
+[ext_resource type="Texture2D" uid="uid://b7td3347lytfh" path="res://Assets/Sprites/Paul/paul-right.png" id="9_jm7vr"]
+[ext_resource type="Script" uid="uid://cy4jixidog5gj" path="res://Tutorial/paul.gd" id="10_p46jp"]
+[ext_resource type="Texture2D" uid="uid://dgbsmrx0ai0s" path="res://Assets/Infection/infection-bar-empty.png" id="11_ma1tk"]
+[ext_resource type="Texture2D" uid="uid://c4sfhnji5kxyd" path="res://Assets/Infection/infection-bar-full.png" id="12_x1p7f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l41xm"]
 animations = [{
@@ -16,12 +22,12 @@ animations = [{
 "texture": ExtResource("2_hgldx")
 }],
 "loop": true,
-"name": &"Dodge",
+"name": &"dodge",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"Walk-Down",
+"name": &"down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -38,7 +44,7 @@ animations = [{
 "texture": ExtResource("4_3oavh")
 }],
 "loop": true,
-"name": &"Walk-Left",
+"name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -55,19 +61,39 @@ animations = [{
 "texture": ExtResource("7_jm7vr")
 }],
 "loop": true,
-"name": &"Walk-Right",
+"name": &"right",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"Walk-Up",
+"name": &"up",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgldx"]
 size = Vector2(31, 77.5)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgldx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jm7vr")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm7vr"]
+size = Vector2(36, 79)
+
 [node name="Tutorial" type="Node2D" unique_id=735892748]
+script = ExtResource("1_dws54")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1228023131]
 z_index = -1
@@ -76,13 +102,48 @@ scale = Vector2(0.36, 0.36)
 texture = ExtResource("1_c1c4d")
 
 [node name="Emma" type="CharacterBody2D" parent="." unique_id=131476858]
+script = ExtResource("2_x3xat")
 
 [node name="EmmaSprite" type="AnimatedSprite2D" parent="Emma" unique_id=1431446324]
 position = Vector2(754, 373)
 scale = Vector2(0.36, 0.36)
 sprite_frames = SubResource("SpriteFrames_l41xm")
-animation = &"Walk-Left"
+animation = &"left"
 
 [node name="EmmaCollision" type="CollisionShape2D" parent="Emma" unique_id=882757267]
+visible = false
 position = Vector2(754, 375)
 shape = SubResource("RectangleShape2D_hgldx")
+
+[node name="Paul" type="CharacterBody2D" parent="." unique_id=399664556]
+script = ExtResource("10_p46jp")
+
+[node name="PaulSprite" type="AnimatedSprite2D" parent="Paul" unique_id=725411305]
+position = Vector2(500, 373)
+scale = Vector2(0.36, 0.36)
+sprite_frames = SubResource("SpriteFrames_hgldx")
+animation = &"right"
+
+[node name="PaulCollision" type="CollisionShape2D" parent="Paul" unique_id=1542100600]
+visible = false
+position = Vector2(502, 378.5)
+shape = SubResource("RectangleShape2D_jm7vr")
+
+[node name="PaulBulletTimer" type="Timer" parent="Paul" unique_id=1402924881]
+wait_time = 3.0
+autostart = true
+
+[node name="InfectionBar" type="TextureProgressBar" parent="." unique_id=971665547]
+offset_left = 22.000061
+offset_top = 19.0
+offset_right = 1022.00006
+offset_bottom = 189.0
+scale = Vector2(0.3, 0.3)
+texture_over = ExtResource("11_ma1tk")
+texture_progress = ExtResource("12_x1p7f")
+
+[node name="InfectionDecreaseTimer" type="Timer" parent="InfectionBar" unique_id=1915306980]
+autostart = true
+
+[connection signal="timeout" from="Paul/PaulBulletTimer" to="Paul" method="_on_paul_bullet_timer_timeout"]
+[connection signal="timeout" from="InfectionBar/InfectionDecreaseTimer" to="." method="_on_infection_decrease_timer_timeout"]

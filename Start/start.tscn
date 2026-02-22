@@ -6,27 +6,157 @@
 [ext_resource type="Texture2D" uid="uid://dpcnp4ky4gadf" path="res://Assets/Start/start-button-press.png" id="3_fei3c"]
 [ext_resource type="Texture2D" uid="uid://dluhyb3g0nvr3" path="res://Assets/Start/info-button.png" id="5_3tbpj"]
 [ext_resource type="Texture2D" uid="uid://714ehee6l6gh" path="res://Assets/Start/info-button-hover.png" id="6_one0q"]
+[ext_resource type="Texture2D" uid="uid://b58l6bn3pjt1x" path="res://Assets/Start/Pokey/pokey-head.png" id="7_x3ar3"]
+[ext_resource type="Texture2D" uid="uid://5avcqyactnnc" path="res://Assets/Start/Pokey/pokey-eyes.png" id="8_tu165"]
+[ext_resource type="Script" uid="uid://c7xotvkxw5w2c" path="res://Start/pokey_eyes.gd" id="9_x3ar3"]
+[ext_resource type="Texture2D" uid="uid://dfhss1i0eqx44" path="res://Assets/Start/goo/goo-1.png" id="10_hdyis"]
+[ext_resource type="Texture2D" uid="uid://buao03kb5x8fq" path="res://Assets/Start/goo/goo-2.png" id="11_j1svd"]
+[ext_resource type="Texture2D" uid="uid://et8gsu6jsaa3" path="res://Assets/Start/goo/goo-3.png" id="12_slmdg"]
+[ext_resource type="Texture2D" uid="uid://cddbnumdkt2bf" path="res://Assets/Start/goo/goo-4.png" id="13_3867c"]
+[ext_resource type="Texture2D" uid="uid://dcp3r8m8ohodv" path="res://Assets/Start/goo/goo-5.png" id="14_06sd0"]
+[ext_resource type="Texture2D" uid="uid://b0gyi1dq22q4j" path="res://Assets/Start/goo/goo-6.png" id="15_sojlc"]
+[ext_resource type="Texture2D" uid="uid://gh15h5rhokck" path="res://Assets/Start/goo/goo-7.png" id="16_yvlmg"]
+[ext_resource type="Texture2D" uid="uid://ch2c2rwfmapr0" path="res://Assets/Start/goo/goo-8.png" id="17_vnahg"]
+[ext_resource type="Texture2D" uid="uid://dw7bwxo2kmdhr" path="res://Assets/Start/goo/goo-9.png" id="18_xk33s"]
+[ext_resource type="Texture2D" uid="uid://dutxfd8fpaqii" path="res://Assets/Start/goo/goo-10.png" id="19_6e0xu"]
+[ext_resource type="Texture2D" uid="uid://dprbd8rvgd4qu" path="res://Assets/Start/goo/goo-11.png" id="20_r7aeu"]
+[ext_resource type="Texture2D" uid="uid://4eo24ugoxhc5" path="res://Assets/Start/goo/goo-12.png" id="21_2i52x"]
+[ext_resource type="Texture2D" uid="uid://tuewlceapc41" path="res://Assets/Start/goo/goo-13.png" id="22_hdtyb"]
+[ext_resource type="Texture2D" uid="uid://d36lwcr5niabw" path="res://Assets/Start/goo/goo-14.png" id="23_mftk5"]
+[ext_resource type="Texture2D" uid="uid://c0l5g3rvkv4i4" path="res://Assets/Start/goo/goo-15.png" id="24_hcnxt"]
+[ext_resource type="Texture2D" uid="uid://dpgdgoiff4svx" path="res://Assets/Start/goo/goo-16.png" id="25_qajwf"]
+[ext_resource type="Texture2D" uid="uid://dm8qsc3ltfw1j" path="res://Assets/Start/goo/goo-17.png" id="26_krmd6"]
+[ext_resource type="Texture2D" uid="uid://cj5nowgnn6va8" path="res://Assets/Start/bg.png" id="27_j1svd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3ar3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x3ar3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhncq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hdyis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j1svd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_slmdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3867c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_06sd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sojlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yvlmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vnahg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xk33s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6e0xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_r7aeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2i52x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hdtyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mftk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hcnxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qajwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_krmd6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Start" type="Node2D" unique_id=1820069497]
 script = ExtResource("1_vdp6l")
 
 [node name="StartBtn" type="TextureButton" parent="." unique_id=435902801]
-offset_left = 270.0
-offset_top = 320.0
-offset_right = 770.0
-offset_bottom = 570.0
+z_index = 1
+offset_left = 110.0
+offset_top = 470.0
+offset_right = 610.0
+offset_bottom = 720.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_kcwqr")
 texture_pressed = ExtResource("3_fei3c")
 texture_hover = ExtResource("2_sace0")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1783957021]
-offset_left = 700.0
-offset_top = 320.0
-offset_right = 1200.0
-offset_bottom = 570.0
+[node name="InfoBtn" type="TextureButton" parent="." unique_id=1783957021]
+z_index = 1
+offset_left = 840.0
+offset_top = 470.0
+offset_right = 1340.0
+offset_bottom = 720.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("5_3tbpj")
 texture_hover = ExtResource("6_one0q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=534069345]
+z_index = -2
+offset_right = 1154.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.11277624, 0.12231987, 0.12709194, 1)
+
+[node name="Pokey" type="AnimatedSprite2D" parent="." unique_id=2112931157]
+position = Vector2(575, 248.00002)
+scale = Vector2(0.29, 0.29)
+sprite_frames = SubResource("SpriteFrames_x3ar3")
+
+[node name="PokeyEyes" type="Sprite2D" parent="Pokey" unique_id=420872364]
+position = Vector2(-2.9906693, -29.90657)
+scale = Vector2(0.99, 0.99)
+texture = ExtResource("8_tu165")
+script = ExtResource("9_x3ar3")
+
+[node name="Goo" type="AnimatedSprite2D" parent="Pokey" unique_id=2112413642]
+z_index = -1
+position = Vector2(0, 1387.664)
+sprite_frames = SubResource("SpriteFrames_qhncq")
+frame_progress = 0.14352547
+
+[node name="ColorRect" type="ColorRect" parent="Pokey" unique_id=587906636]
+z_index = -1
+offset_left = -610.0
+offset_right = 596.6666
+offset_bottom = 653.3333
+color = Color(0.20392157, 0.3137255, 0.6156863, 1)
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1755610167]
+z_index = -2
+position = Vector2(576, 323)
+scale = Vector2(0.3611111, 0.36111113)
+texture = ExtResource("27_j1svd")
 
 [connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]
